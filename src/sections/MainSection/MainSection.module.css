@@ -4,5 +4,13 @@
   height: 100vh;
   margin: 0;
 
-  background-color: red;
+  position: absolute;
+}
+
+.BackgroundVideo {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }

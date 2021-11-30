@@ -1,22 +1,24 @@
 //-Imports
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 //- SECTIONS IMPORTS
-import { MainSection } from "./sections";
-
-import $ from "jquery";
+import { MainSection, ModelsSection } from "./sections";
 
 function App() {
+  const [modal, setModal] = useState(false);
+
   return (
     <ReactScrollWheelHandler
       className="container"
       upHandler={(e) => console.log("scroll up")}
-      downHandler={(e) => console.log("scroll down")}
+      downHandler={(e) => setModal(true)}
     >
-      <MainSection></MainSection>
+      <MainSection zIndex={0}></MainSection>
+
+      {modal && <ModelsSection zIndex={1}></ModelsSection>}
     </ReactScrollWheelHandler>
   );
 }
