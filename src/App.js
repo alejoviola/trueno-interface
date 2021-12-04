@@ -8,17 +8,39 @@ import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { MainSection, ModelsSection } from "./sections";
 
 function App() {
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(0);
+  const [previusModal, setPreviusModal] = useState(0);
+
+  //-
+
+  console.log(modal);
+  console.log(previusModal);
 
   return (
     <ReactScrollWheelHandler
       className="container"
-      upHandler={(e) => console.log("scroll up")}
-      downHandler={(e) => setModal(true)}
+      upHandler={(e) => {
+        if (modal > 0) {
+          setPreviusModal(modal);
+          setModal(modal - 1);
+        } else {
+          console.log("No view");
+        }
+      }}
+      downHandler={(e) => {
+        setPreviusModal(modal);
+        setModal(modal + 1);
+      }}
     >
-      <MainSection zIndex={0}></MainSection>
-
-      {modal && <ModelsSection zIndex={1}></ModelsSection>}
+      {(modal == 0 || previusModal == 0) && (
+        <MainSection zIndex={modal == 0 ? 1 : 0}></MainSection>
+      )}
+      {(modal == 1 || previusModal == 1) && (
+        <ModelsSection zIndex={modal == 1 ? 1 : 0}></ModelsSection>
+      )}
+      {(modal == 2 || previusModal == 2) && (
+        <ModelsSection zIndex={modal == 2 ? 1 : 0}></ModelsSection>
+      )}
     </ReactScrollWheelHandler>
   );
 }

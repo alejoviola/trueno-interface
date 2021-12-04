@@ -5,6 +5,7 @@
   margin: 0;
 
   position: absolute;
+  animation: AnimPicture 0.8s ease-in-out;
 }
 
 .BackgroundVideo {
@@ -13,4 +14,16 @@
   height: 100vh;
   top: 0;
   left: 0;
+}
+
+/************************************/
+
+/*** ANIMATIONS ***/
+@keyframes AnimPicture {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
 }
