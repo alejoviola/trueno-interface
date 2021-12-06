@@ -5,7 +5,7 @@
   margin: 0;
 
   position: absolute;
-  animation: AnimPicture 0.8s ease-in-out;
+  animation: AnimPicture 0.5s ease-in-out;
 }
 
 .BackgroundVideo {
