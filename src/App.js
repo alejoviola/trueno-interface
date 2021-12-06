@@ -10,6 +10,7 @@ import {
   ModelsSection,
   IlusSection,
   MotionSection,
+  Footer,
 } from "./sections";
 
 function App() {
@@ -33,8 +34,12 @@ function App() {
         }
       }}
       downHandler={(e) => {
-        setPreviusModal(modal);
-        setModal(modal + 1);
+        if (modal < 4) {
+          setPreviusModal(modal);
+          setModal(modal + 1);
+        } else {
+          console.log("No view");
+        }
       }}
     >
       {(modal === 0 || previusModal === 0) && (
@@ -48,6 +53,9 @@ function App() {
       )}
       {(modal === 3 || previusModal === 3) && (
         <MotionSection zIndex={modal === 3 ? 1 : 0} />
+      )}
+      {(modal === 4 || previusModal === 4) && (
+        <Footer zIndex={modal === 4 ? 1 : 0} />
       )}
     </ReactScrollWheelHandler>
   );
