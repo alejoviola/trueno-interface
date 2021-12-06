@@ -5,7 +5,7 @@ import "./App.css";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 //- SECTIONS IMPORTS
-import { MainSection, ModelsSection } from "./sections";
+import { MainSection, ModelsSection, IlusSection } from "./sections";
 
 function App() {
   const [modal, setModal] = useState(0);
@@ -32,14 +32,14 @@ function App() {
         setModal(modal + 1);
       }}
     >
-      {(modal == 0 || previusModal == 0) && (
-        <MainSection zIndex={modal == 0 ? 1 : 0}></MainSection>
+      {(modal === 0 || previusModal === 0) && (
+        <MainSection zIndex={modal === 0 ? 1 : 0} />
       )}
-      {(modal == 1 || previusModal == 1) && (
-        <ModelsSection zIndex={modal == 1 ? 1 : 0}></ModelsSection>
+      {(modal === 1 || previusModal === 1) && (
+        <ModelsSection zIndex={modal === 1 ? 1 : 0} />
       )}
-      {(modal == 2 || previusModal == 2) && (
-        <ModelsSection zIndex={modal == 2 ? 1 : 0}></ModelsSection>
+      {(modal === 2 || previusModal === 2) && (
+        <IlusSection zIndex={modal === 2 ? 1 : 0} />
       )}
     </ReactScrollWheelHandler>
   );

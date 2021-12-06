@@ -1,0 +1,61 @@
+.Container {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+
+  position: relative;
+}
+
+/******************************/
+.Title {
+  display: flex;
+  position: absolute;
+
+  left: 0;
+  width: 50%;
+  height: 100vh;
+
+  background-color: #ff8b00;
+  animation: AnimLeft 0.5s ease-in-out;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.Picture {
+  display: inline-block;
+  position: absolute;
+
+  right: 0;
+  width: 50%;
+  height: 100vh;
+
+  background-color: red;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation: AnimRight 0.5s ease-in-out;
+}
+
+/************************************/
+
+/*** ANIMATIONS ***/
+@keyframes AnimLeft {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes AnimRight {
+  0% {
+    right: -50%;
+  }
+  100% {
+    right: 0px;
+  }
+}
