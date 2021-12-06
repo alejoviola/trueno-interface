@@ -8,7 +8,7 @@ const IlusSection = ({ zIndex }) => {
   return (
     <section className={styles.Container} style={{ zIndex: zIndex }}>
       <div className={styles.Title}>
-        <h2>ILUSTRACION</h2>
+        <h2>ILUSTRACIONes</h2>
       </div>
       <div className={styles.Picture}></div>
     </section>

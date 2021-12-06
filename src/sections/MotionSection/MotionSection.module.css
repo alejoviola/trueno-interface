@@ -1,0 +1,94 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+}
+
+/********************************************/
+
+.Pictures {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+
+  overflow: hidden;
+}
+
+.PictureOne {
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+
+  background-image: url(./assets/motocicleta.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation: AnimPictureOne 0.5s ease-in-out;
+}
+
+.PictureTwo {
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+
+  background-image: url(./assets/pistol.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation: AnimPictureTwo 0.5s ease-in-out;
+}
+
+/********************************************/
+
+.Title {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+
+  background-color: #7c02f6;
+
+  animation: AnimTitle 0.5s ease-in-out;
+}
+
+/********************************************/
+/*** ANIMATIONS ***/
+@keyframes AnimPictureOne {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes AnimPictureTwo {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+
+@keyframes AnimTitle {
+  0% {
+    bottom: -50%;
+  }
+  100% {
+    bottom: 0px;
+  }
+}

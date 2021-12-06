@@ -21,7 +21,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  animation: AnimPicture 0.8s ease-in-out;
+  animation: AnimPicture 0.5s ease-in-out;
 }
 
 /******************************/
@@ -47,7 +47,7 @@
   justify-content: center;
   align-items: center;
 
-  animation: AnimTitle 0.8s ease-in-out;
+  animation: AnimTitle 0.5s ease-in-out;
 }
 
 .Picture2 {
@@ -63,7 +63,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  animation: AnimPicture2 0.8s ease-in-out;
+  animation: AnimPicture2 0.5s ease-in-out;
 }
 
 /************************************/
