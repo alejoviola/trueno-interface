@@ -50,6 +50,12 @@
   animation: AnimTitle 0.5s ease-in-out;
 }
 
+.Title h2 {
+  font-size: 42px;
+  font-weight: 900;
+  font-style: italic;
+}
+
 .Picture2 {
   display: inline-block;
   width: 100%;
