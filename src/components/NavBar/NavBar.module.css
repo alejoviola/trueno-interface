@@ -1,0 +1,65 @@
+.Container {
+  display: flex;
+  width: 100vw;
+  height: 50px;
+  margin: 0;
+  box-sizing: content-box;
+
+  position: absolute;
+
+  align-items: center;
+
+  /*background-color: #7c02f6;*/
+
+  animation: AnimContainer 0.5s ease-in-out;
+
+  z-index: 5;
+}
+
+/********************************************/
+
+.LogoOrange {
+  display: inline-block;
+  width: calc(221px / 1.5);
+  height: calc(34px / 1.5);
+  margin: 10px;
+  text-indent: -9999px;
+
+  background: none;
+  background-image: url(./assets/trueno.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+}
+
+.LogoOrange:hover {
+  cursor: pointer;
+}
+
+/********************************************/
+
+.BurgerBar {
+  width: 100px;
+  animation: AnimBurger cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+/*** ANIMATIONS ***/
+@keyframes AnimBurger {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100px;
+  }
+}
+
+.BurgerMenu {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}

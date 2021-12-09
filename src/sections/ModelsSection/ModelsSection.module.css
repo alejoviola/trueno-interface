@@ -21,7 +21,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  animation: AnimPicture 0.5s ease-in-out;
+  animation: AnimPicture 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 /******************************/
@@ -47,7 +47,7 @@
   justify-content: center;
   align-items: center;
 
-  animation: AnimTitle 0.5s ease-in-out;
+  animation: AnimTitle 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .Title h2 {
@@ -69,7 +69,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  animation: AnimPicture2 0.5s ease-in-out;
+  animation: AnimPicture2 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 /************************************/

@@ -4,6 +4,9 @@ import "./App.css";
 
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
+//- COMPONENTS IMPORTS
+import NavBar from "./components/NavBar/NavBar";
+
 //- SECTIONS IMPORTS
 import {
   MainSection,
@@ -42,6 +45,7 @@ function App() {
         }
       }}
     >
+      <NavBar />
       {(modal === 0 || previusModal === 0) && (
         <MainSection zIndex={modal === 0 ? 1 : 0} />
       )}
