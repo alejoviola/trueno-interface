@@ -22,6 +22,17 @@
                 "3": "./assets/models/pistol/pistol-3.jpg",
                 "4": "./assets/models/pistol/pistol-4.jpg"
             }
+        },
+        "auris": {
+            "name": "Auriculares",
+            "description": "",
+            "pictures":{
+                "portada": "./assets/models/auris/auris-portada.jpg",
+                "1": "./assets/models/auris/auris-1.jpg",
+                "2": "./assets/models/auris/auris-2.jpg",
+                "3": "./assets/models/auris/auris-3.jpg",
+                "4": "./assets/models/auris/auris-4.jpg"
+            }
         }
     }
 }

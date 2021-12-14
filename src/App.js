@@ -15,6 +15,7 @@ import {
   IlusSection,
   MotionSection,
   Footer,
+  WorkSection,
 } from "./sections";
 
 //- PICTURES IMPORTS
@@ -127,7 +128,7 @@ function App() {
     <ReactScrollWheelHandler
       className="container"
       upHandler={(e) => {
-        if (modal > 0) {
+        if (modal > 0 && modal < 5) {
           setPreviusModal(modal);
           setModal(modal - 1);
         } else {
@@ -135,7 +136,7 @@ function App() {
         }
       }}
       downHandler={(e) => {
-        if (modal < 4) {
+        if (modal < 4 && modal > -1) {
           setPreviusModal(modal);
           setModal(modal + 1);
         } else {
@@ -159,6 +160,10 @@ function App() {
           zIndex={modal === 1 ? 1 : 0}
           picture={models.models.moto.pictures.portada}
           picture2={models.models.pistol.pictures.portada}
+          onClick={() => {
+            setPreviusModal(modal);
+            setModal(5);
+          }}
         />
       )}
       {(modal === 2 || previusModal === 2) && (
@@ -169,6 +174,15 @@ function App() {
       )}
       {(modal === 4 || previusModal === 4) && (
         <Footer zIndex={modal === 4 ? 1 : 0} />
+      )}
+
+      {(modal === 5 || previusModal === 5) && (
+        <WorkSection
+          zIndex={modal === 5 ? 1 : 0}
+          picture={models.models.moto.pictures.portada}
+          picture2={models.models.auris.pictures.portada}
+          picture3={models.models.pistol.pictures.portada}
+        />
       )}
     </ReactScrollWheelHandler>
   );

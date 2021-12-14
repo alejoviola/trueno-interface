@@ -1,0 +1,87 @@
+.Container {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  line-height: 0px;
+
+  position: absolute;
+  box-sizing: border-box;
+}
+
+/******************************/
+
+.Button {
+  display: inline-block;
+  padding: 0;
+  margin: 0px;
+
+  width: 50%;
+  height: 50vh;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation: AnimPicture 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  border: none;
+  position: absolute;
+}
+
+/******************************/
+
+.One {
+  animation: one 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+.Two {
+  right: 0px;
+  animation: two 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+.Three {
+  bottom: 0px;
+  animation: three 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+.Four {
+  bottom: 0px;
+  right: 0px;
+  animation: four 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+/******************************/
+/*** ANIMATIONS ***/
+@keyframes one {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes two {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes three {
+  0% {
+    bottom: -50%;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+
+@keyframes four {
+  0% {
+    right: -50%;
+  }
+  100% {
+    right: 0px;
+  }
+}

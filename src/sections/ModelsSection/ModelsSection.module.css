@@ -23,6 +23,7 @@
   background-repeat: no-repeat;
 
   animation: AnimPicture 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  border: none;
 }
 
 /******************************/
@@ -49,9 +50,11 @@
   align-items: center;
 
   animation: AnimTitle 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  border: none;
 }
 
 .Title h2 {
+  font-family: "Montserrat";
   font-size: 20px;
   font-weight: 900;
   font-style: italic;
@@ -71,6 +74,7 @@
   background-repeat: no-repeat;
 
   animation: AnimPicture2 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  border: none;
 }
 
 /************************************/
