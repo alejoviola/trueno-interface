@@ -5,18 +5,9 @@ import { useSpring, animated } from "react-spring";
 //- Styles Imports
 import styles from "./NavBar.module.css";
 
-const NavBar = () => {
-  //- MODAL
-  const [showModal, setShowModal] = useState(false);
-
+const NavBar = ({ NavItems, showModal, setShowModal }) => {
   //- ANIMATION SVG CROSS
   const animDuration = "0.3s";
-  const animatedBuger = useSpring({
-    from: { width: 0 },
-    to: { width: 100 },
-  });
-
-  console.log(animatedBuger.width);
 
   const animatedBar1 = useSpring({
     x1: showModal ? 5 : 5,
@@ -32,65 +23,75 @@ const NavBar = () => {
   });
 
   return (
-    <nav className={styles.Container}>
-      <button className={styles.LogoOrange} onClick={() => {}}>
-        TRUENO
-      </button>
+    <>
+      <header className={styles.Container}>
+        <button className={styles.LogoOrange} onClick={() => {}}>
+          TRUENO
+        </button>
 
-      <button
-        className={styles.BurgerMenu}
-        onClick={() => {
-          setShowModal(!showModal);
-        }}
-      >
-        <svg
-          className={styles.Burger}
-          viewBox="0 0 100 50"
-          width="35"
-          height="35"
-          overflow="visible"
+        <button
+          className={styles.BurgerMenu}
+          onClick={() => {
+            setShowModal(!showModal);
+          }}
         >
-          {!showModal && (
-            <g>
-              <rect
-                className={styles.BurgerBar}
-                height="15"
-                fill="#ff8b00"
-                style={{ animationDuration: "0.9s" }}
-              />
-              <rect
-                y="30"
-                className={styles.BurgerBar}
-                height="15"
-                fill="#ff8b00"
-                style={{ animationDuration: "0.7s" }}
-              />
-              <rect
-                y="60"
-                className={styles.BurgerBar}
-                height="15"
-                fill="#ff8b00"
-                style={{ animationDuration: "0.5s" }}
-              />
-            </g>
-          )}
-          {showModal && (
-            <g className={styles.Cross}>
-              <animated.line
-                {...animatedBar1}
-                stroke="#ff8b00"
-                stroke-width="15"
-              />
-              <animated.line
-                {...animatedBar2}
-                stroke="#ff8b00"
-                stroke-width="15"
-              />
-            </g>
-          )}
-        </svg>
-      </button>
-    </nav>
+          <svg
+            className={styles.Burger}
+            viewBox="0 0 100 50"
+            width="35"
+            height="35"
+            overflow="visible"
+          >
+            {!showModal && (
+              <g>
+                <rect
+                  className={styles.BurgerBar}
+                  height="15"
+                  fill="#ff8b00"
+                  style={{ animationDuration: "0.9s" }}
+                />
+                <rect
+                  y="30"
+                  className={styles.BurgerBar}
+                  height="15"
+                  fill="#ff8b00"
+                  style={{ animationDuration: "0.7s" }}
+                />
+                <rect
+                  y="60"
+                  className={styles.BurgerBar}
+                  height="15"
+                  fill="#ff8b00"
+                  style={{ animationDuration: "0.5s" }}
+                />
+              </g>
+            )}
+            {showModal && (
+              <g className={styles.Cross}>
+                <animated.line
+                  {...animatedBar1}
+                  stroke="#ff8b00"
+                  strokeWidth="15"
+                />
+                <animated.line
+                  {...animatedBar2}
+                  stroke="#ff8b00"
+                  strokeWidth="15"
+                />
+              </g>
+            )}
+          </svg>
+        </button>
+      </header>
+
+      {showModal && (
+        <nav className={styles.NavContainer}>
+          <ul className={styles.NavItemContainer}>
+            <NavItems />
+          </ul>
+        </nav>
+      )}
+    </>
   );
 };
 

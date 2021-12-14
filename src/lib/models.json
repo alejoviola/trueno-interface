@@ -1,0 +1,27 @@
+{
+    "models": {
+        "moto": {
+            "name": "Moto",
+            "description": "",
+            "pictures":{
+                "portada": "./assets/models/moto/moto-portada.jpg",
+                "1": "./assets/models/moto/moto-1.jpg",
+                "2": "./assets/models/moto/moto-2.jpg",
+                "3": "./assets/models/moto/moto-3.jpg",
+                "4": "./assets/models/moto/moto-3.jpg"
+            }
+
+        },
+        "pistol": {
+            "name": "Pistol",
+            "description": "",
+            "pictures":{
+                "portada": "./assets/models/pistol/pistol-portada.jpg",
+                "1": "./assets/models/pistol/pistol-1.jpg",
+                "2": "./assets/models/pistol/pistol-2.jpg",
+                "3": "./assets/models/pistol/pistol-3.jpg",
+                "4": "./assets/models/pistol/pistol-4.jpg"
+            }
+        }
+    }
+}
