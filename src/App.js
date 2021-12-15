@@ -16,6 +16,7 @@ import {
   MotionSection,
   Footer,
   WorkSection,
+  Gallery,
 } from "./sections";
 
 //- PICTURES IMPORTS
@@ -159,6 +160,8 @@ function App() {
           setModal(0);
         }}
       />
+
+      <Gallery zIndex={2} />
 
       {(modal === 0 || previusModal === 0) && (
         <MainSection zIndex={modal === 0 ? 1 : 0} />
