@@ -32,6 +32,7 @@
   display: inline-block;
   position: absolute;
   right: 0;
+  overflow: hidden;
 
   width: 50%;
   height: 100%;
@@ -53,11 +54,13 @@
   border: none;
 }
 
-.Title h2 {
+.Title > h2 {
   font-family: "Montserrat";
   font-size: 20px;
   font-weight: 900;
   font-style: italic;
+
+  animation: AnimH2 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .Picture2 {
@@ -75,6 +78,19 @@
 
   animation: AnimPicture2 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   border: none;
+}
+
+/************************************/
+
+.Picture,
+.Picture2,
+.Title {
+  cursor: pointer;
+}
+
+.Picture:hover,
+.Picture2:hover {
+  transform: scale(1.1);
 }
 
 /************************************/
@@ -104,5 +120,20 @@
   }
   100% {
     right: 0px;
+  }
+}
+
+@keyframes AnimH2 {
+  0% {
+    opacity: 0;
+    letter-spacing: 2px;
+  }
+  25% {
+    opacity: 0;
+    letter-spacing: 2px;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: normal;
   }
 }

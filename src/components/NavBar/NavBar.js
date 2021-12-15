@@ -5,7 +5,7 @@ import { useSpring, animated } from "react-spring";
 //- Styles Imports
 import styles from "./NavBar.module.css";
 
-const NavBar = ({ NavItems, showModal, setShowModal }) => {
+const NavBar = ({ NavItems, showModal, setShowModal, back }) => {
   //- ANIMATION SVG CROSS
   const animDuration = "0.3s";
 
@@ -25,7 +25,12 @@ const NavBar = ({ NavItems, showModal, setShowModal }) => {
   return (
     <>
       <header className={styles.Container}>
-        <button className={styles.LogoOrange} onClick={() => {}}>
+        <button
+          className={styles.LogoOrange}
+          onClick={() => {
+            back();
+          }}
+        >
           TRUENO
         </button>
 

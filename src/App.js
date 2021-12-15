@@ -28,6 +28,12 @@ function App() {
   //- MODAL
   const [showModal, setShowModal] = useState(false);
 
+  //- PICTURES DEL MENU
+  const [picture, setPicture] = useState("");
+  const [picture2, setPicture2] = useState("");
+  const [picture3, setPicture3] = useState("");
+  const [picture4, setPicture4] = useState("");
+
   console.log(modal);
   console.log(previusModal);
 
@@ -122,8 +128,6 @@ function App() {
     );
   };
 
-  console.log(models.models.moto.pictures.portada);
-
   return (
     <ReactScrollWheelHandler
       className="container"
@@ -150,6 +154,10 @@ function App() {
         setShowModal={(value) => {
           setShowModal(value);
         }}
+        back={() => {
+          setPreviusModal(modal);
+          setModal(0);
+        }}
       />
 
       {(modal === 0 || previusModal === 0) && (
@@ -161,6 +169,9 @@ function App() {
           picture={models.models.moto.pictures.portada}
           picture2={models.models.pistol.pictures.portada}
           onClick={() => {
+            setPicture(models.models.moto.pictures.portada);
+            setPicture2(models.models.auris.pictures.portada);
+            setPicture3(models.models.pistol.pictures.portada);
             setPreviusModal(modal);
             setModal(5);
           }}
@@ -179,9 +190,10 @@ function App() {
       {(modal === 5 || previusModal === 5) && (
         <WorkSection
           zIndex={modal === 5 ? 1 : 0}
-          picture={models.models.moto.pictures.portada}
-          picture2={models.models.auris.pictures.portada}
-          picture3={models.models.pistol.pictures.portada}
+          picture={picture}
+          picture2={picture2}
+          picture3={picture3}
+          picture4={picture4}
         />
       )}
     </ReactScrollWheelHandler>
