@@ -15,6 +15,13 @@ const ModelsSection = ({ zIndex, picture, picture2, onClick }) => {
       ></button>
       <div className={styles.SubContainer}>
         <button
+          className={styles.Picture2}
+          style={{
+            backgroundImage: "url(" + picture2 + ")",
+          }}
+        ></button>
+
+        <button
           className={styles.Title}
           onClick={() => {
             onClick();
@@ -22,13 +29,6 @@ const ModelsSection = ({ zIndex, picture, picture2, onClick }) => {
         >
           <h2>3D MODELS</h2>
         </button>
-
-        <button
-          className={styles.Picture2}
-          style={{
-            backgroundImage: "url(" + picture2 + ")",
-          }}
-        ></button>
       </div>
     </section>
   );
