@@ -35,6 +35,12 @@ function App() {
   const [picture3, setPicture3] = useState("");
   const [picture4, setPicture4] = useState("");
 
+  //- PICTURES DE GALLERY
+  const [item, setItem] = useState("");
+  const [item2, setItem2] = useState("");
+  const [item3, setItem3] = useState("");
+  const [item4, setItem4] = useState("");
+
   console.log(modal);
   console.log(previusModal);
 
@@ -161,8 +167,6 @@ function App() {
         }}
       />
 
-      <Gallery zIndex={2} />
-
       {(modal === 0 || previusModal === 0) && (
         <MainSection zIndex={modal === 0 ? 1 : 0} />
       )}
@@ -177,6 +181,22 @@ function App() {
             setPicture3(models.models.pistol.pictures.portada);
             setPreviusModal(modal);
             setModal(5);
+          }}
+          onClick1={() => {
+            setItem(models.models.moto.pictures[1]);
+            setItem2(models.models.moto.pictures[2]);
+            setItem3(models.models.moto.pictures[3]);
+            setItem4(models.models.moto.pictures[4]);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
+          onClick2={() => {
+            setItem(models.models.pistol.pictures[1]);
+            setItem2(models.models.pistol.pictures[2]);
+            setItem3(models.models.pistol.pictures[3]);
+            setItem4(models.models.pistol.pictures[4]);
+            setPreviusModal(modal);
+            setModal(6);
           }}
         />
       )}
@@ -197,6 +217,16 @@ function App() {
           picture2={picture2}
           picture3={picture3}
           picture4={picture4}
+        />
+      )}
+
+      {(modal === 6 || previusModal === 6) && (
+        <Gallery
+          zIndex={modal === 6 ? 1 : 0}
+          picture={item}
+          picture2={item2}
+          picture3={item3}
+          picture4={item4}
         />
       )}
     </ReactScrollWheelHandler>

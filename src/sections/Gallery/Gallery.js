@@ -8,7 +8,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
-const Gallery = ({ zIndex }) => {
+const Gallery = ({ zIndex, picture, picture2, picture3, picture4 }) => {
   const options = {
     loop: true,
     autoplay: true,
@@ -20,10 +20,10 @@ const Gallery = ({ zIndex }) => {
         items: 1,
       },
       600: {
-        items: 2,
+        items: 1,
       },
       769: {
-        items: 3,
+        items: 1,
       },
     },
   };
@@ -31,7 +31,22 @@ const Gallery = ({ zIndex }) => {
   return (
     <section className={styles.Container} style={{ zIndex: zIndex }}>
       <OwlCarousel {...options} style={{ padding: "0", margin: "0" }}>
-        <div className={`${styles.Picture}`}></div>
+        <div
+          className={`${styles.Picture}`}
+          style={{ backgroundImage: "url(" + picture + ")" }}
+        ></div>
+        <div
+          className={`${styles.Picture}`}
+          style={{ backgroundImage: "url(" + picture2 + ")" }}
+        ></div>
+        <div
+          className={`${styles.Picture}`}
+          style={{ backgroundImage: "url(" + picture3 + ")" }}
+        ></div>
+        <div
+          className={`${styles.Picture}`}
+          style={{ backgroundImage: "url(" + picture4 + ")" }}
+        ></div>
       </OwlCarousel>
     </section>
   );

@@ -7,6 +7,32 @@
 
   position: absolute;
   box-sizing: border-box;
+
+  background-color: #8200ff;
+  animation: AnimContainer 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 /******************************/
+
+.Picture {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/******************************/
+/**************/
+/* ANIMATIONS */
+/**************/
+@keyframes AnimContainer {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0px;
+  }
+}

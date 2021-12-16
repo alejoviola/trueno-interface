@@ -8,7 +8,7 @@ const Footer = ({ zIndex }) => {
   return (
     <section className={styles.Container} style={{ zIndex: zIndex }}>
       <div className={styles.SubContainer}>
-        <h1>FASO</h1>
+        <h1>TRUENERS</h1>
       </div>
     </section>
   );
