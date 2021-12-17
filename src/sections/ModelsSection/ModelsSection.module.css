@@ -11,18 +11,30 @@
 
 /******************************/
 
-.Picture {
+.PictureContainer {
   display: inline-block;
   position: absolute;
+  overflow: hidden;
 
   width: 50%;
   height: 100vh;
+
+  animation: AnimPictureContainer 0.5s cubic-bezier(0.645, 0.045, 0.355, 1)
+    forwards;
+  border: none;
+}
+
+.Picture {
+  display: inline-block;
+
+  width: 100%;
+  height: 100%;
 
   background-position-x: -400px;
   background-size: cover;
   background-repeat: no-repeat;
 
-  animation: AnimPicture 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: AnimPicture 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   border: none;
 }
 
@@ -63,7 +75,7 @@
   animation: AnimH2 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
-.Picture2 {
+.Picture2Container {
   display: inline-block;
   width: 100%;
   height: 65%;
@@ -71,12 +83,21 @@
 
   bottom: 0px;
 
+  animation: AnimPicture2Container 0.5s cubic-bezier(0.645, 0.045, 0.355, 1)
+    forwards;
+}
+
+.Picture2 {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
   background-position: center;
   background-position-x: -250px;
   background-size: cover;
   background-repeat: no-repeat;
 
-  animation: AnimPicture2 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: AnimPicture2 1.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   border: none;
 }
 
@@ -96,12 +117,27 @@
 /************************************/
 
 /*** ANIMATIONS ***/
-@keyframes AnimPicture {
+@keyframes AnimPictureContainer {
   0% {
     left: -50%;
   }
   100% {
     left: 0px;
+  }
+}
+
+@keyframes AnimPicture {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -114,12 +150,27 @@
   }
 }
 
-@keyframes AnimPicture2 {
+@keyframes AnimPicture2Container {
   0% {
     right: -100%;
   }
   100% {
     right: 0px;
+  }
+}
+
+@keyframes AnimPicture2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

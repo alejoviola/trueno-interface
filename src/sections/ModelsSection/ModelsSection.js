@@ -14,25 +14,29 @@ const ModelsSection = ({
 }) => {
   return (
     <section className={styles.Container} style={{ zIndex: zIndex }}>
-      <button
-        className={styles.Picture}
-        style={{
-          backgroundImage: "url(" + picture + ")",
-        }}
-        onClick={() => {
-          onClick1();
-        }}
-      ></button>
-      <div className={styles.SubContainer}>
+      <div className={styles.PictureContainer}>
         <button
-          className={styles.Picture2}
+          className={styles.Picture}
           style={{
-            backgroundImage: "url(" + picture2 + ")",
+            backgroundImage: "url(" + picture + ")",
           }}
           onClick={() => {
-            onClick2();
+            onClick1();
           }}
         ></button>
+      </div>
+      <div className={styles.SubContainer}>
+        <div className={styles.Picture2Container}>
+          <button
+            className={styles.Picture2}
+            style={{
+              backgroundImage: "url(" + picture2 + ")",
+            }}
+            onClick={() => {
+              onClick2();
+            }}
+          ></button>
+        </div>
 
         <button
           className={styles.Title}
