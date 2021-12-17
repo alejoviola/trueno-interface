@@ -21,7 +21,48 @@
 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+
+  cursor: pointer;
+}
+
+/******************************/
+/* MENU DE ABAJO */
+
+.MenuContainer {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+
+  background: linear-gradient(
+    0deg,
+    rgba(255, 139, 0, 0.25) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+}
+
+.Return {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-color: red;
+
+  position: absolute;
+  left: 50px;
+  cursor: pointer;
+
+  border: none;
+}
+
+.MenuName {
+  color: white;
+  font-size: 32px;
 }
 
 /******************************/
@@ -34,5 +75,11 @@
   }
   100% {
     top: 0px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .Picture {
+    background-size: cover;
   }
 }
