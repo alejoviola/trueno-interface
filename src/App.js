@@ -36,6 +36,7 @@ function App() {
   const [picture4, setPicture4] = useState("");
 
   //- PICTURES DE GALLERY
+  const [name, setName] = useState("");
   const [item, setItem] = useState("");
   const [item2, setItem2] = useState("");
   const [item3, setItem3] = useState("");
@@ -135,6 +136,15 @@ function App() {
     );
   };
 
+  //-  REFRESH PREVIUS MODAL
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setPreviusModal("");
+      clearInterval(intervalId);
+      console.log("Previus Modal Clear!");
+    }, 500);
+  }, [modal]);
+
   return (
     <ReactScrollWheelHandler
       className="container"
@@ -183,6 +193,11 @@ function App() {
             setModal(5);
           }}
           onClick1={() => {
+            setPicture(models.models.moto.pictures.portada);
+            setPicture2(models.models.auris.pictures.portada);
+            setPicture3(models.models.pistol.pictures.portada);
+
+            setName(models.models.moto.name);
             setItem(models.models.moto.pictures[1]);
             setItem2(models.models.moto.pictures[2]);
             setItem3(models.models.moto.pictures[3]);
@@ -191,6 +206,11 @@ function App() {
             setModal(6);
           }}
           onClick2={() => {
+            setPicture(models.models.moto.pictures.portada);
+            setPicture2(models.models.auris.pictures.portada);
+            setPicture3(models.models.pistol.pictures.portada);
+
+            setName(models.models.pistol.name);
             setItem(models.models.pistol.pictures[1]);
             setItem2(models.models.pistol.pictures[2]);
             setItem3(models.models.pistol.pictures[3]);
@@ -223,10 +243,15 @@ function App() {
       {(modal === 6 || previusModal === 6) && (
         <Gallery
           zIndex={modal === 6 ? 1 : 0}
+          name={name}
           picture={item}
           picture2={item2}
           picture3={item3}
           picture4={item4}
+          onReturn={() => {
+            setPreviusModal(modal);
+            setModal(5);
+          }}
         />
       )}
     </ReactScrollWheelHandler>
