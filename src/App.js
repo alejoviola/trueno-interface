@@ -42,6 +42,10 @@ function App() {
   const [item3, setItem3] = useState("");
   const [item4, setItem4] = useState("");
 
+  //- GALLERY CONTAIN STATE
+  const [contain, setContain] = useState(false);
+  const [back, setBack] = useState(5);
+
   console.log(modal);
   console.log(previusModal);
 
@@ -145,6 +149,10 @@ function App() {
     }, 500);
   }, [modal]);
 
+  //////////////
+  //  RENDER  //
+  //////////////
+
   return (
     <ReactScrollWheelHandler
       className="container"
@@ -189,6 +197,7 @@ function App() {
             setPicture(models.models.moto.pictures.portada);
             setPicture2(models.models.auris.pictures.portada);
             setPicture3(models.models.pistol.pictures.portada);
+            setPicture4(undefined);
             setPreviusModal(modal);
             setModal(5);
           }}
@@ -196,12 +205,16 @@ function App() {
             setPicture(models.models.moto.pictures.portada);
             setPicture2(models.models.auris.pictures.portada);
             setPicture3(models.models.pistol.pictures.portada);
+            setPicture4(undefined);
+            setContain(false);
+            setBack(5);
 
             setName(models.models.moto.name);
             setItem(models.models.moto.pictures[1]);
             setItem2(models.models.moto.pictures[2]);
             setItem3(models.models.moto.pictures[3]);
             setItem4(models.models.moto.pictures[4]);
+
             setPreviusModal(modal);
             setModal(6);
           }}
@@ -209,6 +222,9 @@ function App() {
             setPicture(models.models.moto.pictures.portada);
             setPicture2(models.models.auris.pictures.portada);
             setPicture3(models.models.pistol.pictures.portada);
+            setPicture4(undefined);
+            setContain(false);
+            setBack(5);
 
             setName(models.models.pistol.name);
             setItem(models.models.pistol.pictures[1]);
@@ -221,27 +237,96 @@ function App() {
         />
       )}
       {(modal === 2 || previusModal === 2) && (
-        <IlusSection zIndex={modal === 2 ? 1 : 0} />
+        <IlusSection
+          zIndex={modal === 2 ? 1 : 0}
+          picture={models.ilus.portada}
+          onClickTitle={() => {
+            setPicture(models.ilus.jack.portada);
+            setPicture2(models.ilus.dragon.portada);
+            setPicture3(models.ilus.robot.portada);
+            setPicture4(models.ilus.alicia.portada);
+            setPreviusModal(modal);
+            setModal(5);
+          }}
+          onClick1={() => {
+            setPicture(models.ilus.jack.portada);
+            setPicture2(models.ilus.dragon.portada);
+            setPicture3(models.ilus.robot.portada);
+            setPicture4(models.ilus.alicia.portada);
+
+            setContain(true);
+            setBack(7);
+
+            setName(models.ilus.jack.name);
+            setItem(models.ilus.jack.picture);
+            setItem2(undefined);
+            setItem3(undefined);
+            setItem4(undefined);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
+        />
       )}
       {(modal === 3 || previusModal === 3) && (
-        <MotionSection zIndex={modal === 3 ? 1 : 0} />
+        <MotionSection
+          zIndex={modal === 3 ? 1 : 0}
+          picture1={models.motion.grooming.portada}
+          picture2={models.motion.visa.portada}
+        />
       )}
       {(modal === 4 || previusModal === 4) && (
         <Footer zIndex={modal === 4 ? 1 : 0} />
       )}
 
       {(modal === 5 || previusModal === 5) && (
+        //- Models Menu Section
         <WorkSection
           zIndex={modal === 5 ? 1 : 0}
           picture={picture}
           picture2={picture2}
           picture3={picture3}
           picture4={picture4}
+          onClick1={() => {
+            setContain(false);
+            setBack(5);
+            setName(models.models.moto.name);
+            setItem(models.models.moto.pictures[1]);
+            setItem2(models.models.moto.pictures[2]);
+            setItem3(models.models.moto.pictures[3]);
+            setItem4(models.models.moto.pictures[4]);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
+          onClick2={() => {
+            setContain(false);
+            setBack(5);
+            setName(models.models.auris.name);
+            setItem(models.models.auris.pictures[1]);
+            setItem2(models.models.auris.pictures[2]);
+            setItem3(models.models.auris.pictures[3]);
+            setItem4(models.models.auris.pictures[4]);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
+          onClick3={() => {
+            setContain(false);
+            setBack(5);
+            setName(models.models.pistol.name);
+            setItem(models.models.pistol.pictures[1]);
+            setItem2(models.models.pistol.pictures[2]);
+            setItem3(models.models.pistol.pictures[3]);
+            setItem4(models.models.pistol.pictures[4]);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
+          onClick4={() => {}}
         />
       )}
 
       {(modal === 6 || previusModal === 6) && (
+        //- Models Gallery
         <Gallery
+          contain={contain ? true : false}
           zIndex={modal === 6 ? 1 : 0}
           name={name}
           picture={item}
@@ -250,7 +335,62 @@ function App() {
           picture4={item4}
           onReturn={() => {
             setPreviusModal(modal);
-            setModal(5);
+            setModal(back);
+          }}
+        />
+      )}
+
+      {(modal === 7 || previusModal === 7) && (
+        //- ILUS MENU SECTION
+        <WorkSection
+          zIndex={modal === 7 ? 1 : 0}
+          picture={picture}
+          picture2={picture2}
+          picture3={picture3}
+          picture4={picture4}
+          onClick1={() => {
+            setContain(true);
+            setBack(7);
+            setName(models.ilus.jack.name);
+            setItem(models.ilus.jack.picture);
+            setItem2(undefined);
+            setItem3(undefined);
+            setItem4(undefined);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
+          onClick2={() => {
+            setContain(true);
+            setBack(7);
+            setName(models.ilus.dragon.name);
+            setItem(models.ilus.dragon.picture);
+            setItem2(undefined);
+            setItem3(undefined);
+            setItem4(undefined);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
+          onClick3={() => {
+            setContain(true);
+            setBack(7);
+            setName(models.ilus.robot.name);
+            setItem(models.ilus.robot.picture);
+            setItem2(undefined);
+            setItem3(undefined);
+            setItem4(undefined);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
+          onClick4={() => {
+            setContain(true);
+            setBack(7);
+            setName(models.ilus.alicia.name);
+            setItem(models.ilus.alicia.picture);
+            setItem2(undefined);
+            setItem3(undefined);
+            setItem4(undefined);
+            setPreviusModal(modal);
+            setModal(6);
           }}
         />
       )}

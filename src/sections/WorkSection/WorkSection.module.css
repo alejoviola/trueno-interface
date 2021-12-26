@@ -12,21 +12,50 @@
 
 /******************************/
 
-.Button {
+.PictureContainer {
   display: inline-block;
   padding: 0;
   margin: 0px;
 
   width: 50%;
   height: 50vh;
+  overflow: hidden;
+
+  animation: AnimPicture 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  position: absolute;
+}
+
+.ButtonContainer {
+  display: inline-block;
+  padding: 0;
+  margin: 0px;
+
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.Button {
+  display: inline-block;
+  padding: 0;
+  margin: 0px;
+
+  width: 100%;
+  height: 100%;
 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
-  animation: AnimPicture 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   border: none;
-  position: absolute;
+}
+
+.Button {
+  cursor: pointer;
+}
+
+.ButtonContainer:hover {
+  transform: scale(1.1);
 }
 
 /******************************/

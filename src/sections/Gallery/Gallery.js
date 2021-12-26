@@ -16,6 +16,7 @@ const Gallery = ({
   picture3,
   picture4,
   onReturn,
+  contain,
 }) => {
   const options = {
     loop: true,
@@ -38,21 +39,28 @@ const Gallery = ({
       </div>
       <OwlCarousel {...options} style={{ padding: "0", margin: "0" }}>
         <div
-          className={`${styles.Picture}`}
+          className={`${styles.Picture} ${contain ? styles.Contain : ""}`}
           style={{ backgroundImage: "url(" + picture + ")" }}
         ></div>
-        <div
-          className={`${styles.Picture}`}
-          style={{ backgroundImage: "url(" + picture2 + ")" }}
-        ></div>
-        <div
-          className={`${styles.Picture}`}
-          style={{ backgroundImage: "url(" + picture3 + ")" }}
-        ></div>
-        <div
-          className={`${styles.Picture}`}
-          style={{ backgroundImage: "url(" + picture4 + ")" }}
-        ></div>
+        {picture2 && (
+          <div
+            className={`${styles.Picture} ${contain ? styles.Contain : ""}`}
+            style={{ backgroundImage: "url(" + picture2 + ")" }}
+          ></div>
+        )}
+
+        {picture3 && (
+          <div
+            className={`${styles.Picture} ${contain ? styles.Contain : ""}`}
+            style={{ backgroundImage: "url(" + picture3 + ")" }}
+          ></div>
+        )}
+        {picture4 && (
+          <div
+            className={`${styles.Picture} ${contain ? styles.Contain : ""}`}
+            style={{ backgroundImage: "url(" + picture4 + ")" }}
+          ></div>
+        )}
       </OwlCarousel>
     </section>
   );

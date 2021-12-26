@@ -34,5 +34,45 @@
                 "4": "./assets/models/auris/auris-4.jpg"
             }
         }
+    },
+    "ilus":{
+        "portada": "./assets/ilus/portada.png",
+        "jack":{
+            "name": "Jack Daniels Honey",
+            "portada": "./assets/ilus/portada.png",
+            "picture": "./assets/ilus/jack.jpg"
+        },
+        "dragon":{
+            "name": "How to Train Your Dragon",
+            "portada": "./assets/ilus/dragon.png",
+            "picture": "./assets/ilus/dragon.png"
+        },
+        "robot":{
+            "name": "Terminator",
+            "portada": "./assets/ilus/termi.jpg",
+            "picture": "./assets/ilus/termi.jpg"
+        },
+        "alicia":{
+            "name": "Alicia",
+            "portada": "./assets/ilus/alicia.png",
+            "picture": "./assets/ilus/alicia.png"
+        }
+    },
+    "motion":{
+        "grooming":{
+            "name": "Grooming",
+            "portada": "./assets/motion/grooming/portada.gif",
+            "video": "./assets/motion/grooming/grooming.mp4"
+        },
+        "mapping":{
+            "name": "Mapping DJ",
+            "portada": "./assets/motion/mapping/mapping.gif",
+            "video": "./assets/motion/mapping/mapping.mp4"
+        },
+        "visa":{
+            "name": "Visa Vis",
+            "portada": "./assets/motion/visa/visa.gif",
+            "video": "./assets/motion/mapping/mapping.mp4"
+        }
     }
 }

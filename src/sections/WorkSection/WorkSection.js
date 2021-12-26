@@ -4,35 +4,76 @@ import React from "react";
 //-Style Imports
 import styles from "./WorkSection.module.css";
 
-const WorkSection = ({ zIndex, picture, picture2, picture3, picture4 }) => {
+const WorkSection = ({
+  zIndex,
+  picture,
+  picture2,
+  picture3,
+  picture4,
+  onClick1,
+  onClick2,
+  onClick3,
+  onClick4,
+}) => {
   return (
     <section className={styles.Container} style={{ zIndex: zIndex }}>
-      <button
-        className={`${styles.Button} ${styles.One}`}
-        style={{
-          backgroundImage: "url(" + picture + ")",
-        }}
-      />
-      <button
-        className={`${styles.Button} ${styles.Two}`}
-        style={{
-          backgroundImage: "url(" + picture2 + ")",
-        }}
-      />
-      <button
-        className={`${styles.Button} ${styles.Three}`}
-        style={{
-          backgroundImage: "url(" + picture3 + ")",
-        }}
-      />
-      <button
-        className={`${styles.Button} ${styles.Four}`}
-        style={
-          picture4
-            ? { backgroundImage: "url(" + picture4 + ")" }
-            : { backgroundColor: "#7c02f6" }
-        }
-      />
+      <div className={`${styles.PictureContainer} ${styles.One}`}>
+        <div className={styles.ButtonContainer}>
+          <button
+            className={styles.Button}
+            style={{
+              backgroundImage: "url(" + picture + ")",
+            }}
+            onClick={() => {
+              onClick1();
+            }}
+          />
+        </div>
+      </div>
+
+      <div className={`${styles.PictureContainer} ${styles.Two}`}>
+        <div className={styles.ButtonContainer}>
+          <button
+            className={styles.Button}
+            style={{
+              backgroundImage: "url(" + picture2 + ")",
+            }}
+            onClick={() => {
+              onClick2();
+            }}
+          />
+        </div>
+      </div>
+
+      <div className={`${styles.PictureContainer} ${styles.Three}`}>
+        <div className={styles.ButtonContainer}>
+          <button
+            className={styles.Button}
+            style={{
+              backgroundImage: "url(" + picture3 + ")",
+            }}
+            onClick={() => {
+              onClick3();
+            }}
+          />
+        </div>
+      </div>
+
+      <div className={`${styles.PictureContainer} ${styles.Four}`}>
+        <div className={styles.ButtonContainer}>
+          <button
+            className={styles.Button}
+            style={
+              picture4
+                ? { backgroundImage: "url(" + picture4 + ")" }
+                : { backgroundColor: "#7c02f6" }
+            }
+            onClick={() => {
+              onClick4();
+            }}
+          />
+        </div>
+      </div>
     </section>
   );
 };
