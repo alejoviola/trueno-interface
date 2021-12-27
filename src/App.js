@@ -6,6 +6,7 @@ import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 //- COMPONENTS IMPORTS
 import NavBar from "./components/NavBar/NavBar";
+import Scroll from "./components/Scroll/Scroll";
 import styles from "./components/NavBar/NavBar.module.css";
 
 //- SECTIONS IMPORTS
@@ -17,6 +18,7 @@ import {
   Footer,
   WorkSection,
   Gallery,
+  VideoSection,
 } from "./sections";
 
 //- PICTURES IMPORTS
@@ -45,6 +47,9 @@ function App() {
   //- GALLERY CONTAIN STATE
   const [contain, setContain] = useState(false);
   const [back, setBack] = useState(5);
+
+  //- Video State
+  const [video, setVideo] = useState("");
 
   console.log(modal);
   console.log(previusModal);
@@ -91,7 +96,7 @@ function App() {
               setShowModal(false);
             }}
           >
-            MOTION
+            ILUSTRACIONES
           </button>
         </li>
         <li className={styles.NavItem}>
@@ -105,23 +110,10 @@ function App() {
               setShowModal(false);
             }}
           >
-            ILUSTRACION
+            MOTION
           </button>
         </li>
-        <li className={styles.NavItem}>
-          <button
-            className={`${styles.NavButton} ${
-              modal == 4 ? styles.NavSelected : styles.NavNoSelected
-            }`}
-            onClick={() => {
-              setPreviusModal(modal);
-              setModal(4);
-              setShowModal(false);
-            }}
-          >
-            PAGINAS WEB
-          </button>
-        </li>
+
         <li className={styles.NavItem}>
           <button
             className={`${styles.NavButton} ${
@@ -197,7 +189,7 @@ function App() {
             setPicture(models.models.moto.pictures.portada);
             setPicture2(models.models.auris.pictures.portada);
             setPicture3(models.models.pistol.pictures.portada);
-            setPicture4(undefined);
+            setPicture4(models.models.victrola.pictures.portada);
             setPreviusModal(modal);
             setModal(5);
           }}
@@ -205,7 +197,7 @@ function App() {
             setPicture(models.models.moto.pictures.portada);
             setPicture2(models.models.auris.pictures.portada);
             setPicture3(models.models.pistol.pictures.portada);
-            setPicture4(undefined);
+            setPicture4(models.models.victrola.pictures.portada);
             setContain(false);
             setBack(5);
 
@@ -222,7 +214,7 @@ function App() {
             setPicture(models.models.moto.pictures.portada);
             setPicture2(models.models.auris.pictures.portada);
             setPicture3(models.models.pistol.pictures.portada);
-            setPicture4(undefined);
+            setPicture4(models.models.victrola.pictures.portada);
             setContain(false);
             setBack(5);
 
@@ -246,7 +238,7 @@ function App() {
             setPicture3(models.ilus.robot.portada);
             setPicture4(models.ilus.alicia.portada);
             setPreviusModal(modal);
-            setModal(5);
+            setModal(7);
           }}
           onClick1={() => {
             setPicture(models.ilus.jack.portada);
@@ -270,6 +262,24 @@ function App() {
       {(modal === 3 || previusModal === 3) && (
         <MotionSection
           zIndex={modal === 3 ? 1 : 0}
+          onClickTitle={() => {
+            setPicture(models.motion.grooming.portada);
+            setPicture2(models.motion.mapping.portada);
+            setPicture3(models.motion.visa.portada);
+            setPicture4(models.motion.google.portada);
+            setPreviusModal(modal);
+            setModal(8);
+          }}
+          onClickOne={() => {
+            setVideo(models.motion.grooming.video);
+            setPreviusModal(modal);
+            setModal(9);
+          }}
+          onClickTwo={() => {
+            setVideo(models.motion.visa.video);
+            setPreviusModal(modal);
+            setModal(9);
+          }}
           picture1={models.motion.grooming.portada}
           picture2={models.motion.visa.portada}
         />
@@ -319,7 +329,17 @@ function App() {
             setPreviusModal(modal);
             setModal(6);
           }}
-          onClick4={() => {}}
+          onClick4={() => {
+            setContain(false);
+            setBack(5);
+            setName(models.models.victrola.name);
+            setItem(models.models.victrola.pictures[1]);
+            setItem2(models.models.victrola.pictures[2]);
+            setItem3(models.models.victrola.pictures[3]);
+            setItem4(models.models.victrola.pictures[4]);
+            setPreviusModal(modal);
+            setModal(6);
+          }}
         />
       )}
 
@@ -393,6 +413,50 @@ function App() {
             setModal(6);
           }}
         />
+      )}
+
+      {(modal === 8 || previusModal === 8) && (
+        //- Videos MENU SECTION
+        <WorkSection
+          zIndex={modal === 8 ? 1 : 0}
+          picture={picture}
+          picture2={picture2}
+          picture3={picture3}
+          picture4={picture4}
+          onClick1={() => {
+            setBack(7);
+            setName(models.motion.grooming.name);
+            setVideo(models.motion.grooming.video);
+            setPreviusModal(modal);
+            setModal(9);
+          }}
+          onClick2={() => {
+            setBack(7);
+            setName(models.motion.mapping.name);
+            setVideo(models.motion.mapping.video);
+            setPreviusModal(modal);
+            setModal(9);
+          }}
+          onClick3={() => {
+            setBack(7);
+            setName(models.motion.visa.name);
+            setVideo(models.motion.visa.video);
+            setPreviusModal(modal);
+            setModal(9);
+          }}
+          onClick4={() => {
+            setBack(7);
+            setName(models.motion.google.name);
+            setVideo(models.motion.google.video);
+            setPreviusModal(modal);
+            setModal(9);
+          }}
+        />
+      )}
+
+      {(modal === 9 || previusModal === 9) && (
+        //- VIDEO PLAYER
+        <VideoSection zIndex={modal === 9 ? 1 : 0} video={video} />
       )}
     </ReactScrollWheelHandler>
   );

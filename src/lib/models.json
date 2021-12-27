@@ -33,6 +33,17 @@
                 "3": "./assets/models/auris/auris-3.jpg",
                 "4": "./assets/models/auris/auris-4.jpg"
             }
+        },
+        "victrola": {
+            "name": "Victrola",
+            "description": "",
+            "pictures":{
+                "portada": "./assets/models/victrola/victrola-portada.png",
+                "1": "./assets/models/victrola/victrola1.jpg",
+                "2": "./assets/models/victrola/victrola2.jpg",
+                "3": "./assets/models/victrola/victrola3.jpg",
+                "4": "./assets/models/victrola/victrola4.jpg"
+            }
         }
     },
     "ilus":{
@@ -72,7 +83,12 @@
         "visa":{
             "name": "Visa Vis",
             "portada": "./assets/motion/visa/visa.gif",
-            "video": "./assets/motion/mapping/mapping.mp4"
+            "video": "./assets/motion/visa/visa.mp4"
+        },
+        "google":{
+            "name": "Google",
+            "portada": "./assets/motion/google/google.gif",
+            "video": "./assets/motion/google/google.mp4"
         }
     }
 }

@@ -4,7 +4,14 @@ import React from "react";
 //-Style Imports
 import styles from "./MotionSection.module.css";
 
-const MotionSection = ({ zIndex, picture1, picture2 }) => {
+const MotionSection = ({
+  zIndex,
+  picture1,
+  picture2,
+  onClickTitle,
+  onClickOne,
+  onClickTwo,
+}) => {
   return (
     <section className={styles.Container} style={{ zIndex: zIndex }}>
       <div className={styles.Pictures}>
@@ -14,6 +21,9 @@ const MotionSection = ({ zIndex, picture1, picture2 }) => {
               className={styles.PictureOne}
               style={{
                 backgroundImage: "url(" + picture1 + ")",
+              }}
+              onClick={() => {
+                onClickOne();
               }}
             ></button>
           </div>
@@ -25,11 +35,19 @@ const MotionSection = ({ zIndex, picture1, picture2 }) => {
               style={{
                 backgroundImage: "url(" + picture2 + ")",
               }}
+              onClick={() => {
+                onClickTwo();
+              }}
             ></button>
           </div>
         </div>
       </div>
-      <button className={styles.Title}>
+      <button
+        className={styles.Title}
+        onClick={() => {
+          onClickTitle();
+        }}
+      >
         <h2>MOTION GRAPHICS</h2>
       </button>
     </section>

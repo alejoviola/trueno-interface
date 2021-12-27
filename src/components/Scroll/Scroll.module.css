@@ -1,0 +1,30 @@
+.Scroll {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+
+  position: fixed;
+  z-index: 2;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 25px);
+
+  background-image: url(../../assets/scroll.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  animation: AnimScroll infinite 1.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes AnimScroll {
+  0% {
+    bottom: 50px;
+  }
+  50% {
+    bottom: 30px;
+  }
+  100% {
+    bottom: 50px;
+  }
+}

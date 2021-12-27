@@ -9,6 +9,7 @@ export { default as MotionSection } from "./MotionSection/MotionSection";
 //- Other Sections
 export { default as WorkSection } from "./WorkSection/WorkSection";
 export { default as Gallery } from "./Gallery/Gallery";
+export { default as VideoSection } from "./VideoSection/VideoSection";
 
 //- Footer
 export { default as Footer } from "./Footer/Footer";
