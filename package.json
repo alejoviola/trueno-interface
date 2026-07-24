@@ -11,7 +11,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-owl-carousel": "^2.3.3",
-    "react-scripts": "4.0.3",
     "react-scroll-wheel-handler": "^2.1.0",
     "react-spring": "^9.3.2",
     "redux": "^4.1.2",
@@ -19,16 +18,11 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "CI=false react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "browserslist": {
     "production": [
@@ -41,5 +35,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.4",
+    "jsdom": "^29.1.1",
+    "vite": "^8.1.5",
+    "vitest": "^4.1.10"
   }
 }
